@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Application extends Model
 {
     use HasFactory;
+
+    public function contact()
+    {
+        return $this->hasOne('App\Models\Contact', 'id', 'contact_id');
+    }
+    protected $guarded = [];
 }
